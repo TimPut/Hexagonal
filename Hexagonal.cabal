@@ -22,7 +22,8 @@ source-repository head
 
 common common-options
   build-depends:       base ^>= 4.13.0.0
-  
+                     , linear
+
   ghc-options:         -Wall
                        -Wcompat
                        -Widentities
@@ -44,33 +45,3 @@ library
   import:              common-options
   hs-source-dirs:      src
   exposed-modules:     Hexagonal
-
-executable Hexagonal
-  import:              common-options
-  hs-source-dirs:      app
-  main-is:             Main.hs
-  build-depends:       Hexagonal
-  ghc-options:         -threaded
-                       -rtsopts
-                       -with-rtsopts=-N
-
-test-suite Hexagonal-test
-  import:              common-options
-  type:                exitcode-stdio-1.0
-  hs-source-dirs:      test
-  main-is:             Spec.hs
-  build-depends:       Hexagonal
-  ghc-options:         -threaded
-                       -rtsopts
-                       -with-rtsopts=-N
-
-benchmark Hexagonal-benchmark
-  import:              common-options
-  type:                exitcode-stdio-1.0
-  hs-source-dirs:      benchmark
-  main-is:             Main.hs
-  build-depends:       gauge
-                     , Hexagonal
-  ghc-options:         -threaded
-                       -rtsopts
-                       -with-rtsopts=-N
