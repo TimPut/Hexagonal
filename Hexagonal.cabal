@@ -1,6 +1,6 @@
 cabal-version:       2.4
 name:                Hexagonal
-version:             0.0.0.0
+version:             0.1.0.0
 synopsis:            Utilites for data sampled on regular hexagonal grids.
 description:         Utilites for data sampled on regular hexagonal grids.
 homepage:            https://github.com/timput/Hexagonal
